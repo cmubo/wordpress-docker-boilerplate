@@ -42,6 +42,7 @@ services:
       WORDPRESS_DB_NAME: '${MYSQL_DATABASE}'
     volumes:
       - ./:/var/www/html
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini 
     networks:
       - wordpress-network
 
