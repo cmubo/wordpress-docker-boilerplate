@@ -43,3 +43,9 @@ This guide is a lot more complicated for windows and you should follow the windo
 ```
 docker cp ./wordpress/wp-content/uploads CONTAINER_ID:/var/html/www/wp-content/
 ```
+
+
+- You might need to create a .htaccess file, you can either add this into the volumes or copy one into the volume using docker copy commands. There is a basic .htaccess.sample in this root directory.
+```
+docker cp ./.htaccess CONTAINER_ID:/var/html/www/
+```
