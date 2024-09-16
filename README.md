@@ -1,3 +1,5 @@
+Alot of these instructions are for local only, especially the windows sections and anything to do with permissions, these instructions are insecure but are fine in a local environment.
+
 # Getting started
 IMPORTANT! On windows this should be used inside the wsl file system, not directly inside windows file system. This is due to wsl2 running through docker being extremely slow. So we bypass wsl's need to connect to the windows file system by running through the wsl filesystem itself.
 
@@ -49,3 +51,8 @@ docker cp ./wordpress/wp-content/uploads CONTAINER_ID:/var/html/www/wp-content/
 ```
 docker cp ./.htaccess CONTAINER_ID:/var/html/www/
 ```
+
+- When running in linux, you may need to change the permissions of wp-content folder in docker or any directories you want to make changes to by running 
+`docker exec -it CONTAINER_ID chmod -R g+w /var/www/html/wp-content`
+
+This should be fine since github doesnt 
