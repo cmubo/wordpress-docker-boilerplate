@@ -37,13 +37,6 @@ This guide is a lot more complicated for windows and you should follow the windo
 
 
 # Notes
-
-- IMAGES: Image uploads wont be reflected on the filesystem, and wont be uploaded either. Any images will need to be manually copied over to the docker container using a `docker cp` command. You can copy the whole uploads directory by running this command:
-```
-docker cp ./wordpress/wp-content/uploads CONTAINER_ID:/var/www/html/wp-content/
-```
-
-
 - HTACCESS: You might need to create a .htaccess file, you can either add this into the volumes or copy one into the volume using docker copy commands. There is a basic .htaccess.sample in this root directory.
 ```
 docker cp ./.htaccess CONTAINER_ID:/var/www/html/

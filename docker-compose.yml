@@ -43,15 +43,13 @@ services:
       WORDPRESS_DB_NAME: '${MYSQL_DATABASE}'
     volumes:
       - ./wordpress/wp-content:/var/www/html/wp-content
-      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini 
-      - wp_uploads:/var/www/html/wp-content/uploads #This will stop files being downloaded into our files by keeping them in a named volume
+      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     networks:
       - wordpress-network
 
 
 volumes:
   db_data:
-  wp_uploads:
 
 
 networks:
